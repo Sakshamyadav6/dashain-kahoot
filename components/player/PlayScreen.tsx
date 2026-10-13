@@ -175,7 +175,7 @@ export default function PlayScreen() {
   );
 }
 
-export function PlayView({
+function PlayView({
   state,
   pending,
   closed,
@@ -371,7 +371,7 @@ function Rank({
       )}
       {finale && <Greeting className="animate-rise relative mb-4 text-3xl" />}
       <p className="relative text-xl tracking-[0.2em] text-cream/70 uppercase">{heading}</p>
-      <div className="animate-pop relative mt-3 grid h-48 w-48 place-items-center rounded-full bg-maroon-deep/70 shadow-[0_0_0_6px_#ffcf5a,0_0_60px_10px_rgb(255_138_0/0.4)]">
+      <div className={`animate-pop relative grid h-48 w-48 place-items-center rounded-full bg-maroon-deep/70 shadow-[0_0_0_6px_#ffcf5a,0_0_60px_10px_rgb(255_138_0/0.4)] ${podium ? "mt-14" : "mt-3"}`}>
         {podium && <span className="animate-crown absolute -top-10 text-5xl">👑</span>}
         <span className="gold-text font-display text-7xl leading-none">
           {state.rank ? placeLabel(state.rank) : "…"}

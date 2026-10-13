@@ -1,0 +1,189 @@
+{
+  "title": "Dashain & Tihar Kahoot Challenge",
+  "questions": [
+    {
+      "prompt": "How many days is Dashain celebrated?",
+      "choices": ["5 days", "10 days", "15 days", "7 days"],
+      "correct": 2,
+      "seconds": 20
+    },
+    {
+      "prompt": "Tihar is known as the festival of lights.",
+      "choices": ["True", "False"],
+      "correct": 0,
+      "seconds": 10
+    },
+    {
+      "prompt": "What is the capital city of Nepal?",
+      "choices": ["Pokhara", "Kathmandu", "Lalitpur", "Biratnagar"],
+      "correct": 1,
+      "seconds": 10
+    },
+    {
+      "prompt": "Which goddess is mainly worshipped during Dashain?",
+      "choices": ["Goddess Laxmi", "Goddess Saraswati", "Goddess Durga", "Goddess Parvati"],
+      "correct": 2,
+      "seconds": 20
+    },
+    {
+      "prompt": "The world's highest mountain is in Nepal. What is it called?",
+      "choices": ["Kanchenjunga", "Mount Everest (Sagarmatha)", "Lhotse", "Annapurna"],
+      "correct": 1,
+      "seconds": 20
+    },
+    {
+      "prompt": "Which animal is worshipped on the second day of Tihar?",
+      "choices": ["Cow", "Crow", "Dog", "Ox"],
+      "correct": 2,
+      "seconds": 20
+    },
+    {
+      "prompt": "Nepal's national flag is rectangular, like most other countries' flags.",
+      "choices": ["True", "False"],
+      "correct": 1,
+      "seconds": 10
+    },
+    {
+      "prompt": "During Dashain, elders put tika on our forehead. What is it usually made of?",
+      "choices": ["Rice, yogurt and red vermilion", "Turmeric and milk", "Sandalwood and honey", "Flour and ghee"],
+      "correct": 0,
+      "seconds": 20
+    },
+    {
+      "prompt": "Which goddess of wealth is worshipped during Tihar?",
+      "choices": ["Goddess Durga", "Goddess Laxmi", "Goddess Kali", "Goddess Taleju"],
+      "correct": 1,
+      "seconds": 20
+    },
+    {
+      "prompt": "What is the first day of Dashain called?",
+      "choices": ["Phulpati", "Ghatasthapana", "Maha Ashtami", "Kojagrat Purnima"],
+      "correct": 1,
+      "seconds": 20
+    },
+    {
+      "prompt": "Jamara, the sacred yellow sprouts worn during Dashain, is usually grown from which seeds?",
+      "choices": ["Barley (jau)", "Rice", "Mustard", "Lentils"],
+      "correct": 0,
+      "seconds": 20
+    },
+    {
+      "prompt": "Which is the correct order of the days of Tihar?",
+      "choices": [
+        "Kukur → Kaag → Laxmi Puja → Bhai Tika",
+        "Kaag → Kukur → Laxmi Puja → Bhai Tika",
+        "Kaag → Laxmi Puja → Kukur → Bhai Tika",
+        "Laxmi Puja → Kaag → Kukur → Bhai Tika"
+      ],
+      "correct": 1,
+      "seconds": 30
+    },
+    {
+      "prompt": "What are Deusi and Bhailo?",
+      "choices": ["Types of sweets", "Songs sung door to door during Tihar", "Kite-flying competitions", "Names of temples"],
+      "correct": 1,
+      "seconds": 20
+    },
+    {
+      "prompt": "Dashain celebrates Goddess Durga's victory over which demon?",
+      "choices": ["Ravana", "Mahishasura", "Kumbhakarna", "Narakasura"],
+      "correct": 1,
+      "seconds": 20
+    },
+    {
+      "prompt": "Flying kites is a popular tradition during Dashain.",
+      "choices": ["True", "False"],
+      "correct": 0,
+      "seconds": 10
+    },
+    {
+      "prompt": "What is the traditional bamboo swing built during Dashain called?",
+      "choices": ["Linge Ping", "Doko", "Namlo", "Chautari"],
+      "correct": 0,
+      "seconds": 20
+    },
+    {
+      "prompt": "What is the national flower of Nepal?",
+      "choices": ["Lotus", "Marigold (Sayapatri)", "Rhododendron (Lali Gurans)", "Jasmine"],
+      "correct": 2,
+      "seconds": 20
+    },
+    {
+      "prompt": "How tall is Mount Everest, in meters?",
+      "choices": ["8,611 m", "8,849 m", "8,586 m", "9,012 m"],
+      "correct": 1,
+      "seconds": 20
+    },
+    {
+      "prompt": "Sel roti, the ring-shaped festival treat, is mainly made from which flour?",
+      "choices": ["Wheat flour", "Rice flour", "Corn flour", "Buckwheat flour"],
+      "correct": 1,
+      "seconds": 20
+    },
+    {
+      "prompt": "Lumbini, Nepal, is famous as the birthplace of whom?",
+      "choices": ["Lord Krishna", "Gautama Buddha", "Sita", "Guru Rinpoche"],
+      "correct": 1,
+      "seconds": 20
+    },
+    {
+      "prompt": "On the 7th day of Dashain, sacred flowers and leaves are brought from Gorkha to Kathmandu. What is this day called?",
+      "choices": ["Phulpati", "Ghatasthapana", "Maha Navami", "Vijaya Dashami"],
+      "correct": 0,
+      "seconds": 20
+    },
+    {
+      "prompt": "Which is the correct order of these days of Dashain?",
+      "choices": [
+        "Phulpati → Ghatasthapana → Maha Ashtami → Vijaya Dashami",
+        "Ghatasthapana → Maha Ashtami → Phulpati → Vijaya Dashami",
+        "Ghatasthapana → Phulpati → Vijaya Dashami → Maha Ashtami",
+        "Ghatasthapana → Phulpati → Maha Ashtami → Vijaya Dashami"
+      ],
+      "correct": 3,
+      "seconds": 30
+    },
+    {
+      "prompt": "Mha Puja, the worship of one's own body during Tihar, is celebrated by which community and marks their New Year?",
+      "choices": ["Sherpa", "Tharu", "Newar", "Gurung"],
+      "correct": 2,
+      "seconds": 20
+    },
+    {
+      "prompt": "On Bhai Tika, sisters give their brothers a 'saptarangi' tika. How many colors does it have?",
+      "choices": ["3", "5", "7", "9"],
+      "correct": 2,
+      "seconds": 20
+    },
+    {
+      "prompt": "Which flower, used in garlands on Bhai Tika, symbolizes long life because it doesn't wilt quickly?",
+      "choices": ["Sayapatri (marigold)", "Makhamali (globe amaranth)", "Lali Gurans (rhododendron)", "Kamal (lotus)"],
+      "correct": 1,
+      "seconds": 20
+    },
+    {
+      "prompt": "What is the national bird of Nepal?",
+      "choices": ["Danfe (Himalayan Monal)", "Kalij pheasant", "Peacock", "Himalayan vulture"],
+      "correct": 0,
+      "seconds": 20
+    },
+    {
+      "prompt": "Nepal Standard Time is unusual. It is UTC plus how much?",
+      "choices": ["+5:00", "+5:30", "+5:45", "+6:00"],
+      "correct": 2,
+      "seconds": 20
+    },
+    {
+      "prompt": "Tihar is also called 'Yamapanchak'. Who is it named after?",
+      "choices": ["Yama, the god of death", "Yamuna, the river goddess", "Yeti, the snow creature", "Yagya, the fire ritual"],
+      "correct": 0,
+      "seconds": 20
+    },
+    {
+      "prompt": "Dashain officially ends on the full moon, the 15th day. What is that day called?",
+      "choices": ["Buddha Purnima", "Guru Purnima", "Kojagrat Purnima", "Janai Purnima"],
+      "correct": 2,
+      "seconds": 20
+    }
+  ]
+}
