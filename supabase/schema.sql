@@ -632,6 +632,17 @@ begin
         where id = g.id;
     end if;
 
+  elsif p_action = 'end' then
+    if g.status = 'finished' then
+      raise exception 'The game has already ended';
+    end if;
+    update public.games
+      set status = 'finished',
+          question_started_at = null,
+          question_duration_ms = null,
+          revision = revision + 1
+      where id = g.id;
+
   else
     raise exception 'Unknown action';
   end if;

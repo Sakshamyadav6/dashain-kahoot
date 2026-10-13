@@ -20,6 +20,7 @@ export function HostStage({
   copied,
   onAction,
   onNewGame,
+  onEndGame,
   onCopy,
 }: {
   snap: HostSnapshot;
@@ -29,6 +30,7 @@ export function HostStage({
   copied: boolean;
   onAction: (action: HostAction) => void;
   onNewGame: () => void;
+  onEndGame: () => void;
   onCopy: () => void;
 }) {
   if (snap.status === "lobby") {
@@ -54,13 +56,21 @@ export function HostStage({
         busy={busy}
         error={error}
         onAction={onAction}
+        onEndGame={onEndGame}
       />
     );
   }
 
   if (snap.status === "leaderboard") {
     return (
-      <Leaderboard key={snap.questionIndex} snap={snap} busy={busy} error={error} onAction={onAction} />
+      <Leaderboard
+        key={snap.questionIndex}
+        snap={snap}
+        busy={busy}
+        error={error}
+        onAction={onAction}
+        onEndGame={onEndGame}
+      />
     );
   }
 
@@ -232,11 +242,13 @@ function QuestionBoard({
   busy,
   error,
   onAction,
+  onEndGame,
 }: {
   snap: HostSnapshot;
   busy: boolean;
   error: string | null;
   onAction: (action: HostAction) => void;
+  onEndGame: () => void;
 }) {
   const clock = useServerClock(snap.status === "question" ? snap.serverNow : null);
   const durationMs = snap.durationMs ?? (snap.question?.seconds ?? 20) * 1000;
@@ -354,6 +366,7 @@ function QuestionBoard({
         <div className="min-w-[12rem] flex-1">
           <ErrorNote message={error} />
         </div>
+        <EndGameButton busy={busy} onEndGame={onEndGame} />
         {revealing ? (
           <GoldButton disabled={busy} onClick={() => onAction("leaderboard")}>
             Leaderboard →
@@ -365,6 +378,14 @@ function QuestionBoard({
         )}
       </footer>
     </FestiveScreen>
+  );
+}
+
+function EndGameButton({ busy, onEndGame }: { busy: boolean; onEndGame: () => void }) {
+  return (
+    <GhostButton className="text-xl" disabled={busy} onClick={onEndGame}>
+      End game
+    </GhostButton>
   );
 }
 
@@ -382,11 +403,13 @@ function Leaderboard({
   busy,
   error,
   onAction,
+  onEndGame,
 }: {
   snap: HostSnapshot;
   busy: boolean;
   error: string | null;
   onAction: (action: HostAction) => void;
+  onEndGame: () => void;
 }) {
   const last = snap.questionIndex + 1 >= snap.questionCount;
   return (
@@ -423,6 +446,7 @@ function Leaderboard({
           <div className="min-w-[12rem] flex-1">
             <ErrorNote message={error} />
           </div>
+          <EndGameButton busy={busy} onEndGame={onEndGame} />
           <GoldButton className="min-h-16 px-8 text-3xl" disabled={busy} onClick={() => onAction("next")}>
             {last ? "Final results 🎆" : "Next question →"}
           </GoldButton>

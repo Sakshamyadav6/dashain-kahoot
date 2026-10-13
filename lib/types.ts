@@ -1,6 +1,6 @@
 export type Phase = "lobby" | "question" | "reveal" | "leaderboard" | "finished";
 
-export type HostAction = "start" | "reveal" | "leaderboard" | "next";
+export type HostAction = "start" | "reveal" | "leaderboard" | "next" | "end";
 
 export type HostQuestion = {
   prompt: string;

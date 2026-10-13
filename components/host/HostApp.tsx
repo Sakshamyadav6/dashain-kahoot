@@ -199,6 +199,14 @@ export default function HostApp() {
     setMode("live");
   }
 
+  function leaveRoom() {
+    clearHost();
+    setToken(null);
+    setSnap(null);
+    setError(null);
+    setMode("setup");
+  }
+
   function onNewGame() {
     if (snap && snap.status !== "finished") {
       const leave = window.confirm(
@@ -206,11 +214,30 @@ export default function HostApp() {
       );
       if (!leave) return;
     }
-    clearHost();
-    setToken(null);
-    setSnap(null);
-    setError(null);
-    setMode("setup");
+    leaveRoom();
+  }
+
+  async function onEndGame() {
+    if (!token || lock.current) return;
+    const end = window.confirm("End the game now? Everyone will see the final results.");
+    if (!end) return;
+    lock.current = true;
+    setBusy(true);
+    try {
+      const next = await hostAction(token, "end");
+      gen.current += 1;
+      setSnap(next);
+      publish(next);
+      setError(null);
+    } catch (caught) {
+      const message = messageFrom(caught);
+      // Databases set up before the "end" action existed: leave the room on this screen.
+      if (message === "Unknown action") leaveRoom();
+      else setError(message);
+    } finally {
+      lock.current = false;
+      setBusy(false);
+    }
   }
 
   async function onCopy() {
@@ -237,6 +264,7 @@ export default function HostApp() {
       copied={copied}
       onAction={(action) => void run(action)}
       onNewGame={onNewGame}
+      onEndGame={() => void onEndGame()}
       onCopy={() => void onCopy()}
     />
   );

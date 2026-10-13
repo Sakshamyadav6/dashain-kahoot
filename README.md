@@ -76,6 +76,8 @@ Phones join at `https://your-domain/join?pin=123456`. That is the URL inside the
 5. The timer reveals the answer on its own. You can also press **Show answer**, then **Leaderboard**, then **Next question**.
 6. The final screen is the top 3. Each phone shows that player’s own rank.
 
+To stop early, press **End game** on any question or leaderboard screen. Everyone jumps to the final results. (Databases set up before this button existed need `supabase/schema.sql` run again; it is safe to re-run.)
+
 If a phone sleeps, it reconnects with the same score as long as the browser keeps the site data.
 
 To host another round, press **New room** and upload the questions again. The previous PIN stops accepting new players once a game has started.
