@@ -1,0 +1,17 @@
+{
+  "title": "Dashain Tihar Quiz",
+  "questions": [
+    {
+      "prompt": "Replace this with your first question",
+      "choices": ["Choice A", "Choice B", "Choice C", "Choice D"],
+      "correct": 0,
+      "seconds": 20
+    },
+    {
+      "prompt": "Replace this with your second question",
+      "choices": ["Choice A", "Choice B"],
+      "correct": 1,
+      "seconds": 15
+    }
+  ]
+}

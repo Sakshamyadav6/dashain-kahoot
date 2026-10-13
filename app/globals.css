@@ -1,0 +1,546 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-maroon: #4a0e18;
+  --color-maroon-deep: #1d040a;
+  --color-night: #12051a;
+  --color-gold: #ffcf5a;
+  --color-marigold: #ff8a00;
+  --color-sindoor: #e0243c;
+  --color-jamara: #b7d36a;
+  --color-cream: #fff6e4;
+  --font-sans: var(--font-body), var(--font-deva), sans-serif;
+  --font-display: var(--font-display-family), var(--font-deva), sans-serif;
+  --font-festive: var(--font-yatra), var(--font-deva), serif;
+}
+
+body {
+  min-height: 100dvh;
+  color: var(--color-cream);
+  color-scheme: dark;
+  background:
+    radial-gradient(1200px 700px at 12% -12%, rgb(255 138 0 / 0.32), transparent 58%),
+    radial-gradient(1000px 620px at 108% 4%, rgb(224 36 60 / 0.28), transparent 55%),
+    radial-gradient(900px 520px at 50% 118%, rgb(255 207 90 / 0.18), transparent 50%),
+    linear-gradient(180deg, #2a0618 0%, #3d0a1c 46%, #1d040a 100%);
+  background-attachment: fixed;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+button,
+a {
+  touch-action: manipulation;
+}
+
+::selection {
+  background: #ffcf5a;
+  color: #1d040a;
+}
+
+:focus-visible {
+  outline: 3px solid #ffcf5a;
+  outline-offset: 3px;
+}
+
+/* ---------- Surfaces ---------- */
+
+.glass {
+  background: linear-gradient(160deg, rgb(255 246 228 / 0.12), rgb(255 246 228 / 0.04));
+  border: 1px solid rgb(255 207 90 / 0.28);
+  box-shadow:
+    0 30px 80px -30px rgb(0 0 0 / 0.7),
+    inset 0 1px 0 rgb(255 255 255 / 0.12);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.gold-text {
+  background: linear-gradient(100deg, #ffb340 0%, #fff1b8 22%, #ffcf5a 40%, #ff8a00 60%, #fff1b8 80%, #ffcf5a 100%);
+  background-size: 250% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 6s linear infinite;
+  filter: drop-shadow(0 4px 18px rgb(255 138 0 / 0.35));
+}
+
+.glow-text {
+  text-shadow:
+    0 0 18px rgb(255 207 90 / 0.55),
+    0 0 48px rgb(255 138 0 / 0.35);
+}
+
+.btn-gold {
+  background: linear-gradient(180deg, #ffe08a 0%, #ffcf5a 38%, #ff9d1c 100%);
+  box-shadow:
+    0 6px 0 #a24a00,
+    0 14px 30px -6px rgb(255 138 0 / 0.65),
+    inset 0 2px 0 rgb(255 255 255 / 0.6);
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    filter 0.2s ease;
+}
+
+.btn-gold::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(110deg, transparent 30%, rgb(255 255 255 / 0.55) 48%, transparent 66%);
+  transform: translateX(-120%);
+  animation: sheen 3.4s ease-in-out infinite;
+}
+
+.btn-gold:hover:not(:disabled) {
+  transform: translateY(-2px);
+  filter: brightness(1.06);
+}
+
+.btn-gold:active:not(:disabled) {
+  transform: translateY(4px);
+  box-shadow:
+    0 2px 0 #a24a00,
+    0 6px 16px -6px rgb(255 138 0 / 0.65),
+    inset 0 2px 0 rgb(255 255 255 / 0.6);
+}
+
+.btn-ghost {
+  background: rgb(255 246 228 / 0.06);
+  box-shadow: inset 0 0 0 2px rgb(255 207 90 / 0.6);
+  transition:
+    transform 0.15s ease,
+    background 0.2s ease;
+}
+
+.btn-ghost:hover:not(:disabled) {
+  background: rgb(255 207 90 / 0.14);
+  transform: translateY(-2px);
+}
+
+.btn-ghost:active:not(:disabled) {
+  transform: translateY(1px) scale(0.98);
+}
+
+/* Answer tiles: a gloss highlight and a faint mandala-dot pattern on the brand color. */
+.tile {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  box-shadow:
+    0 8px 0 rgb(0 0 0 / 0.28),
+    0 20px 40px -14px rgb(0 0 0 / 0.6),
+    inset 0 2px 0 rgb(255 255 255 / 0.35);
+}
+
+.tile::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(circle at 20% 15%, rgb(255 255 255 / 0.35), transparent 40%),
+    radial-gradient(rgb(255 255 255 / 0.12) 1.5px, transparent 1.6px) 0 0 / 18px 18px;
+}
+
+.tile::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(180deg, transparent 55%, rgb(0 0 0 / 0.22));
+}
+
+/* ---------- Keyframes ---------- */
+
+@keyframes shimmer {
+  to {
+    background-position: -250% 0;
+  }
+}
+
+@keyframes sheen {
+  0%,
+  55% {
+    transform: translateX(-120%);
+  }
+  100% {
+    transform: translateX(120%);
+  }
+}
+
+@keyframes kite-drift {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(var(--r, -8deg));
+  }
+  25% {
+    transform: translate(18px, -22px) rotate(calc(var(--r, -8deg) + 6deg));
+  }
+  50% {
+    transform: translate(-10px, -38px) rotate(calc(var(--r, -8deg) - 4deg));
+  }
+  75% {
+    transform: translate(-22px, -14px) rotate(calc(var(--r, -8deg) + 3deg));
+  }
+}
+
+@keyframes tail-wave {
+  0%,
+  100% {
+    transform: rotate(-7deg);
+  }
+  50% {
+    transform: rotate(9deg);
+  }
+}
+
+@keyframes flicker {
+  0%,
+  100% {
+    transform: scale(1, 1) skewX(0deg);
+    opacity: 1;
+  }
+  20% {
+    transform: scale(0.94, 1.08) skewX(2deg);
+  }
+  40% {
+    transform: scale(1.05, 0.95) skewX(-3deg);
+    opacity: 0.9;
+  }
+  60% {
+    transform: scale(0.97, 1.06) skewX(1deg);
+  }
+  80% {
+    transform: scale(1.03, 0.97) skewX(-1deg);
+    opacity: 0.95;
+  }
+}
+
+@keyframes halo {
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.15);
+  }
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.15;
+    transform: scale(0.7);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+}
+
+@keyframes swing {
+  0%,
+  100% {
+    transform: rotate(-2.5deg);
+  }
+  50% {
+    transform: rotate(2.5deg);
+  }
+}
+
+@keyframes spin-slow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes ember {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--dx, 20px), -110vh) scale(0.4);
+    opacity: 0;
+  }
+}
+
+@keyframes petal-fall {
+  0% {
+    transform: translate(0, -10vh) rotate(0deg);
+    opacity: 0;
+  }
+  8% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--dx, 40px), 110vh) rotate(var(--spin, 540deg));
+    opacity: 0.9;
+  }
+}
+
+@keyframes burst {
+  0% {
+    transform: rotate(var(--a)) translateX(0) scale(1);
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(var(--a)) translateX(var(--d, 120px)) scale(0.2);
+    opacity: 0;
+  }
+}
+
+@keyframes rocket {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(var(--h, -40vh));
+    opacity: 0;
+  }
+}
+
+@keyframes pop-in {
+  0% {
+    transform: scale(0.4) translateY(20px);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.08) translateY(-4px);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes rise-in {
+  from {
+    transform: translateY(28px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(-60px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes grow-up {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes grow-x {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    box-shadow: 0 0 0 0 rgb(255 207 90 / 0.7);
+  }
+  100% {
+    box-shadow: 0 0 0 28px rgb(255 207 90 / 0);
+  }
+}
+
+@keyframes heartbeat {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  15% {
+    transform: scale(1.14);
+  }
+  30% {
+    transform: scale(1);
+  }
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-14px) rotate(-2deg);
+  }
+  40% {
+    transform: translateX(12px) rotate(2deg);
+  }
+  60% {
+    transform: translateX(-8px);
+  }
+  80% {
+    transform: translateX(5px);
+  }
+}
+
+@keyframes winner-glow {
+  0%,
+  100% {
+    box-shadow:
+      0 0 0 6px #fff6e4,
+      0 0 40px 8px rgb(255 207 90 / 0.65);
+  }
+  50% {
+    box-shadow:
+      0 0 0 10px #fff6e4,
+      0 0 80px 20px rgb(255 207 90 / 0.9);
+  }
+}
+
+@keyframes crown-bounce {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-6deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(6deg);
+  }
+}
+
+/* ---------- Utilities ---------- */
+
+.animate-kite {
+  animation: kite-drift var(--dur, 14s) ease-in-out infinite;
+  animation-delay: var(--delay, 0s);
+}
+.animate-tail {
+  transform-origin: top center;
+  animation: tail-wave 1.8s ease-in-out infinite;
+}
+.animate-flicker {
+  transform-origin: 50% 100%;
+  transform-box: fill-box;
+  animation: flicker 1.3s ease-in-out infinite;
+  animation-delay: var(--delay, 0s);
+}
+.animate-halo {
+  transform-origin: center;
+  transform-box: fill-box;
+  animation: halo 2.6s ease-in-out infinite;
+  animation-delay: var(--delay, 0s);
+}
+.animate-twinkle {
+  animation: twinkle var(--dur, 3s) ease-in-out infinite;
+  animation-delay: var(--delay, 0s);
+}
+.animate-swing {
+  transform-origin: top center;
+  animation: swing var(--dur, 4s) ease-in-out infinite;
+  animation-delay: var(--delay, 0s);
+}
+.animate-spin-slow {
+  animation: spin-slow var(--dur, 90s) linear infinite;
+}
+.animate-ember {
+  animation: ember var(--dur, 9s) linear infinite;
+  animation-delay: var(--delay, 0s);
+}
+.animate-petal {
+  animation: petal-fall var(--dur, 6s) linear infinite;
+  animation-delay: var(--delay, 0s);
+}
+.animate-burst {
+  animation: burst var(--dur, 1.6s) cubic-bezier(0.15, 0.7, 0.3, 1) infinite;
+  animation-delay: var(--delay, 0s);
+}
+.animate-pop {
+  animation: pop-in 0.55s cubic-bezier(0.2, 0.9, 0.3, 1.3) both;
+  animation-delay: var(--delay, 0s);
+}
+.animate-rise {
+  animation: rise-in 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  animation-delay: var(--delay, 0s);
+}
+.animate-slide {
+  animation: slide-in 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  animation-delay: var(--delay, 0s);
+}
+.animate-grow-up {
+  transform-origin: bottom;
+  animation: grow-up 1s cubic-bezier(0.2, 0.9, 0.3, 1.1) both;
+  animation-delay: var(--delay, 0s);
+}
+.animate-grow-x {
+  transform-origin: left;
+  animation: grow-x 1s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  animation-delay: var(--delay, 0s);
+}
+.animate-bob {
+  animation: bob var(--dur, 3s) ease-in-out infinite;
+  animation-delay: var(--delay, 0s);
+}
+.animate-pulse-ring {
+  animation: pulse-ring 1.6s ease-out infinite;
+}
+.animate-heartbeat {
+  animation: heartbeat 1s ease-in-out infinite;
+}
+.animate-shake {
+  animation: shake 0.6s ease-in-out both;
+}
+.animate-winner {
+  animation: winner-glow 1.8s ease-in-out infinite;
+}
+.animate-crown {
+  animation: crown-bounce 2.4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+  .animate-ember,
+  .animate-petal,
+  .animate-burst {
+    display: none;
+  }
+}
